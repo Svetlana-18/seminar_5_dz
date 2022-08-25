@@ -4,8 +4,6 @@
 // [3.5, 7.1, 22.9, 2.3, 78.5] -> 76.2
 
 
-
-
 double[] CreateArrayRndInt(int size, int min, int max)
 {
     double[] array = new double[size];
@@ -28,9 +26,9 @@ void PrintArray(double[] array)
     Console.Write($"]");
 }
 
-double Ren(double[] arr)
+double DiffRen(double[] arr)
 {
-    double d = 0;
+    double diff = 0;
     double min = arr[0];
     double max = arr[0];
     for (int i = 0; i < arr.Length; i++)
@@ -38,16 +36,16 @@ double Ren(double[] arr)
     {
         if (arr[i] > max) max = arr[i];
         if (arr[i] < min) min = arr[i];
-        d = max - min;
+        diff = max - min;
     }
-    d = max - min;
-    return d;
+    diff = max - min;
+    return diff;
 }
 double[] arr = CreateArrayRndInt(8, 1, 11);
 PrintArray(arr);
 Console.WriteLine();
 
-double ren = Ren(arr);
+double ren = DiffRen(arr);
 Console.WriteLine($" {Math.Round(ren, 2)} ");
 
 

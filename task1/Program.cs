@@ -24,7 +24,6 @@ int[] RandArray(int len)
     return arrays;
 }
 
-
 void PrintArray(int[] res1)
 {
     Console.Write("[");
@@ -43,7 +42,7 @@ int SumElem(int[] array)
     for (int i = 1; i < array.Length; i++)
     {
         sum += array[i];
-        i = i + 1;
+        i++;
     }
     return sum;
 }

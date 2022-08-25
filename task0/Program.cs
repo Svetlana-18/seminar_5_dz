@@ -4,19 +4,16 @@
 // количество чётных чисел в массиве.
 // [345, 897, 568, 234] -> 2
 
-Console.WriteLine("Введите количество элементов массива: ");
-int num = Convert.ToInt32(Console.ReadLine());
 
-
-int[] CreateArrayRndInt(int arrays)
+int[] CreateArrayRndInt(int min, int max)
 {
-    int[] array = new int[arrays];
     Random rnd = new Random();
-
+    int[] array = new int[rnd.Next(4, 7)];
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = rnd.Next(100, 1000);
+        array[i] = rnd.Next(min, max + 1);
     }
+
     return array;
 }
 
@@ -30,7 +27,6 @@ void PrintArray(int[] array)
     Console.Write($"]");
 }
 
-
 int CountElem(int[] array)
 {
     int count = 0;
@@ -41,7 +37,7 @@ int CountElem(int[] array)
     return count;
 
 }
-int[] arr = CreateArrayRndInt(num);
+int[] arr = CreateArrayRndInt(100, 1000);
 PrintArray(arr);
-int countS = CountElem(arr);
-Console.WriteLine($"Количество четных чисел в массиве: {countS}");
+int counts = CountElem(arr);
+Console.WriteLine($"Количество четных чисел в массиве: {counts}");
